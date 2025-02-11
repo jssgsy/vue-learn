@@ -6,7 +6,7 @@ import HelloWorld from './components/HelloWorld.vue'
 export default {
   name: 'App',  // 组件的名字
   components: {
-    // 3. 不要指定包含的子组件
+    // 3. 还要指定包含的子组件
     HelloWorld
   }
 }
@@ -14,7 +14,7 @@ export default {
 </script>
 
 <template>
-  <HelloWorld />
+  <HelloWorld msg="Hello World!" />
 </template>
 
 <style scoped>
