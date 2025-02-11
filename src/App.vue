@@ -1,17 +1,20 @@
-<script setup lang="ts">
+<!--1. 选项式api要去掉setup属性-->
+<script lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
+
+// 2. 选项式api要手动导出
+export default {
+  name: 'App',  // 组件的名字
+  components: {
+    // 3. 不要指定包含的子组件
+    HelloWorld
+  }
+}
+// 从上述1，2，3看，选项式api相较于组合式api在代码上确实更加麻烦些
 </script>
 
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+  <HelloWorld />
 </template>
 
 <style scoped>
