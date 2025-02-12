@@ -14,6 +14,7 @@ export default {
 </script>
 
 <template>
+  <!--这里的msg是所谓的props-->
   <HelloWorld msg="Hello World!" />
 </template>
 
