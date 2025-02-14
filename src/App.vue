@@ -20,7 +20,7 @@ export default {
   <HelloWorld msg="Hello World!"/>
 
   <!--使用路由-->
-  <router-link to="/about">关于</router-link>
+  <router-link to="/about/100/aa/zhangsan/bb?q1=query1&q2=query2#myfragment">关于</router-link>
   <div>
     <router-view/>
   </div>

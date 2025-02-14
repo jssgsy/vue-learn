@@ -10,7 +10,8 @@ let router:Router = createRouter({
     history: createWebHistory(),    // 此配置项也必不可少
     routes: [   // 在这里配置路由
         {
-            path: '/about',
+            path: '/about/:id/aa/:name/bb',
+            // path: '/about/:id/aa/:name/bb?q1=:x&q2=:y#:frag',    // 这是错误的
             component: About
         }
     ]
