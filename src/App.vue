@@ -16,6 +16,8 @@ export default {
 </script>
 
 <template>
+  <!--main.ts已经导入所有组件了，这里可直接使用-->
+  <a-button>ant-design-vue的按钮</a-button>
   <!--这里的msg是所谓的props-->
   <HelloWorld msg="Hello World!"/>
 
