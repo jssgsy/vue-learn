@@ -2,6 +2,7 @@
 <script lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
 import About from "./components/About.vue";
+import AntDesignVueLearn from "./components/AntDesignVueLearn.vue";
 
 // 2. 选项式api要手动导出
 export default {
@@ -9,24 +10,30 @@ export default {
   components: {
     // 3. 还要指定包含的子组件
     HelloWorld,
-    About
+    About,
+    AntDesignVueLearn,
   }
 }
 // 从上述1，2，3看，选项式api相较于组合式api在代码上确实更加麻烦些
 </script>
 
 <template>
-  <!--main.ts已经导入所有组件了，这里可直接使用-->
-  <a-button>ant-design-vue的按钮</a-button>
-  <!--这里的msg是所谓的props-->
-  <HelloWorld msg="Hello World!"/>
 
-  <!--使用路由-->
-  <router-link to="/about/100/aa/zhangsan/bb?q1=query1&q2=query2#myfragment">关于</router-link>
   <div>
     <router-view/>
   </div>
 
+  <!--ant-design-vue学习页面-->
+  <router-link to="/antdesignlearn">
+    进行ant-design-vue学习页面
+  </router-link>
+  <br>
+
+  <!--使用路由-->
+  <router-link to="/about/100/aa/zhangsan/bb?q1=query1&q2=query2#myfragment">关于</router-link>
+
+  <!--这里的msg是所谓的props-->
+  <HelloWorld msg="Hello World!"/>
 </template>
 
 <style scoped>
@@ -36,9 +43,11 @@ export default {
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
 }

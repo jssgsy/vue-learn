@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'
 import About from "./components/About.vue"
+import AntDesignVueLearn from "./components/AntDesignVueLearn.vue";
 
 // [使用ant-design-vue]0. 全局注册 Ant Design Vue 组件库
 import Antd from 'ant-design-vue';
@@ -20,6 +21,10 @@ let router:Router = createRouter({
             path: '/about/:id/aa/:name/bb',
             // path: '/about/:id/aa/:name/bb?q1=:x&q2=:y#:frag',    // 这是错误的
             component: About
+        },
+        {
+            path: '/antdesignlearn',
+            component: AntDesignVueLearn
         }
     ]
 })
