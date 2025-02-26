@@ -5,6 +5,7 @@ import About from "./components/About.vue";
 import AntDesignVueLearn from "./components/AntDesignVueLearn.vue";
 // 路径别名
 import ModulePathAlias from "@/components/ModulePathAlias.vue";
+import VueRequestLearn from "@/components/ProxyServer.vue";
 
 // 2. 选项式api要手动导出
 export default {
@@ -14,7 +15,8 @@ export default {
     HelloWorld,
     About,
     AntDesignVueLearn,
-    ModulePathAlias
+    ModulePathAlias,
+    VueRequestLearn
   }
 }
 // 从上述1，2，3看，选项式api相较于组合式api在代码上确实更加麻烦些
@@ -40,6 +42,9 @@ export default {
 
   <!--模块路径别名引入-->
   <ModulePathAlias></ModulePathAlias>
+
+  <!--配置代理服务器-->
+  <VueRequestLearn></VueRequestLearn>
 </template>
 
 <style scoped>
