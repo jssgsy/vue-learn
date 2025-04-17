@@ -6,6 +6,7 @@ import AntDesignVueLearn from "./components/AntDesignVueLearn.vue";
 // 路径别名
 import ModulePathAlias from "@/components/ModulePathAlias.vue";
 import VueRequestLearn from "@/components/ProxyServer.vue";
+import OptionApiMethodAndVariableDefine from "@/components/OptionApiMethodAndVariableDefine.vue";
 
 // 2. 选项式api要手动导出
 export default {
@@ -16,7 +17,8 @@ export default {
     About,
     AntDesignVueLearn,
     ModulePathAlias,
-    VueRequestLearn
+    VueRequestLearn,
+    OptionApiMethodAndVariableDefine
   }
 }
 // 从上述1，2，3看，选项式api相较于组合式api在代码上确实更加麻烦些
@@ -45,6 +47,10 @@ export default {
 
   <!--配置代理服务器-->
   <VueRequestLearn></VueRequestLearn>
+
+  <br>
+  <!--选项式api中属性和方法的定义-->
+  <OptionApiMethodAndVariableDefine></OptionApiMethodAndVariableDefine>
 </template>
 
 <style scoped>
