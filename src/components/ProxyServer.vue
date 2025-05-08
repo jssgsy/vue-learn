@@ -2,7 +2,7 @@
 import axios from "axios";
 
 export default {
-  name: "VueRequestLearn",
+  name: "ProxyServer",
   setup() {
     // 此时前端接口端口是vite开发服务器的端口，而不是后端服务器的端口
     // 经验证：schema(http、https)必不可少
@@ -12,7 +12,9 @@ export default {
   }
 }
 </script>
-
+<template>
+  这里没有输出
+</template>
 <style scoped>
 
 </style>

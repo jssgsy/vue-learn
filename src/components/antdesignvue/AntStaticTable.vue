@@ -1,6 +1,6 @@
 <script lang="ts">
   export default {
-    name: 'AntDesignVue',
+    name: 'AntStaticTable',
     data() {
       return {
         dataSource: [
@@ -44,7 +44,7 @@
   }
 </script>
 <template>
-  <a-table :dataSource="dataSource" :columns="columns" :default-expand-all-rows="true" />
+  <a-table :data-source="dataSource" :columns="columns" :default-expand-all-rows="true" />
 </template>
 
 <style scoped>

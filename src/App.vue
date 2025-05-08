@@ -1,13 +1,13 @@
 <!--1. 选项式api要去掉setup属性-->
 <script lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
-import About from "./components/About.vue";
-import AntDesignVueLearn from "./components/AntDesignVueLearn.vue";
+import About from "./components/RouterParam.vue";
+import AntDesignVueLearn from "./components/antdesignvue/AntStaticTable.vue";
 // 路径别名
 import ModulePathAlias from "@/components/ModulePathAlias.vue";
 import VueRequestLearn from "@/components/ProxyServer.vue";
 import OptionApiMethodAndVariableDefine from "@/components/OptionApiMethodAndVariableDefine.vue";
-
+import AntDynamicTable from "@/components/antdesignvue/AntDynamicTable.vue";
 // 2. 选项式api要手动导出
 export default {
   name: 'App',  // 组件的名字
@@ -18,39 +18,39 @@ export default {
     AntDesignVueLearn,
     ModulePathAlias,
     VueRequestLearn,
-    OptionApiMethodAndVariableDefine
+    OptionApiMethodAndVariableDefine,
+    AntDynamicTable
   }
 }
 // 从上述1，2，3看，选项式api相较于组合式api在代码上确实更加麻烦些
 </script>
 
 <template>
+  <router-link to="/antDynamicTable">ant动态数据源表格 | </router-link>
 
-  <div>
-    <router-view/>
-  </div>
-
-  <!--ant-design-vue学习页面-->
-  <router-link to="/antdesignlearn">
-    进行ant-design-vue学习页面
+  <router-link to="/antStaticTable">
+    ant静态数据源表格 |
   </router-link>
-  <br>
+  <!--<br>-->
 
-  <!--使用路由-->
-  <router-link to="/about/100/aa/zhangsan/bb?q1=query1&q2=query2#myfragment">关于</router-link>
+  <router-link to="/about/100/aa/zhangsan/bb?q1=query1&q2=query2#myfragment">路由参数 | </router-link>
 
   <!--这里的msg是所谓的props-->
-  <HelloWorld msg="Hello World!"/>
+  <router-link to="/helloWorld">
+    hello-world |
+  </router-link>
+  <!--<HelloWorld msg="Hello World!"/>-->
 
-  <!--模块路径别名引入-->
-  <ModulePathAlias></ModulePathAlias>
+  <router-link to="/ModulePathAlias">模块路径 | </router-link>
 
-  <!--配置代理服务器-->
-  <VueRequestLearn></VueRequestLearn>
+  <router-link to="/proxyServer">代理服务器 | </router-link>
 
-  <br>
-  <!--选项式api中属性和方法的定义-->
-  <OptionApiMethodAndVariableDefine></OptionApiMethodAndVariableDefine>
+  <router-link to="/optionApiMethodAndVariableDefine">选项式api中属性和方法的定义 | </router-link>
+
+  <div>
+    <br>
+    <router-view/>
+  </div>
 </template>
 
 <style scoped>

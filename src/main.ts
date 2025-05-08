@@ -1,8 +1,8 @@
 import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'
-import About from "./components/About.vue"
-import AntDesignVueLearn from "./components/AntDesignVueLearn.vue";
+import About from "./components/RouterParam.vue"
+import AntDesignVueLearn from "./components/antdesignvue/AntStaticTable.vue";
 
 // [使用ant-design-vue]0. 全局注册 Ant Design Vue 组件库
 import Antd from 'ant-design-vue';
@@ -12,6 +12,13 @@ import Antd from 'ant-design-vue';
 import 'ant-design-vue/dist/reset.css';
 
 import {createRouter, createWebHistory, type Router} from "vue-router";
+import HelloWorld from "./components/HelloWorld.vue";
+import ModulePathAlias from "./components/ModulePathAlias.vue";
+import ProxyServer from "./components/ProxyServer.vue";
+import OptionApiMethodAndVariableDefine from "./components/OptionApiMethodAndVariableDefine.vue";
+import AntDynamicTable from "./components/antdesignvue/AntDynamicTable.vue";
+import AntStaticTable from "./components/antdesignvue/AntStaticTable.vue";
+import RouterParam from "./components/RouterParam.vue";
 
 // 创建路由器实例
 let router:Router = createRouter({
@@ -20,12 +27,32 @@ let router:Router = createRouter({
         {
             path: '/about/:id/aa/:name/bb',
             // path: '/about/:id/aa/:name/bb?q1=:x&q2=:y#:frag',    // 这是错误的
-            component: About
+            component: RouterParam
         },
         {
-            path: '/antdesignlearn',
-            component: AntDesignVueLearn
-        }
+            path: '/antStaticTable',
+            component: AntStaticTable
+        },
+        {
+            path: '/antDynamicTable',
+            component: AntDynamicTable
+        },
+        {
+            path: '/helloworld',
+            component: HelloWorld
+        },
+        {
+            path: '/modulePathAlias',
+            component: ModulePathAlias
+        },
+        {
+            path: '/optionApiMethodAndVariableDefine',
+            component: OptionApiMethodAndVariableDefine
+        },
+        {
+            path: '/proxyServer',
+            component: ProxyServer
+        },
     ]
 })
 let app = createApp(App);
