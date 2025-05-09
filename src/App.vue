@@ -28,10 +28,10 @@ export default {
 <template>
   <router-link to="/antDynamicTable">ant动态数据源表格 | </router-link>
 
-  <router-link to="/antStaticTable">
-    ant静态数据源表格 |
-  </router-link>
-  <!--<br>-->
+  <router-link to="/antStaticTable">ant静态数据源表格 |</router-link>
+
+  <router-link to="/antPagination">ant分页器 |</router-link>
+
 
   <router-link to="/about/100/aa/zhangsan/bb?q1=query1&q2=query2#myfragment">路由参数 | </router-link>
 
