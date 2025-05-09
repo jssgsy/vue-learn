@@ -1,8 +1,6 @@
 import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'
-import About from "./components/RouterParam.vue"
-import AntDesignVueLearn from "./components/antdesignvue/AntStaticTable.vue";
 
 // [使用ant-design-vue]0. 全局注册 Ant Design Vue 组件库
 import Antd from 'ant-design-vue';
@@ -19,6 +17,8 @@ import OptionApiMethodAndVariableDefine from "./components/OptionApiMethodAndVar
 import AntDynamicTable from "./components/antdesignvue/AntDynamicTable.vue";
 import AntStaticTable from "./components/antdesignvue/AntStaticTable.vue";
 import RouterParam from "./components/RouterParam.vue";
+import UseRequestDemo from "./components/vuerequest/UseRequestDemo.vue";
+import UsePaginationDemo from "./components/vuerequest/UsePaginationDemo.vue";
 
 // 创建路由器实例
 let router:Router = createRouter({
@@ -52,6 +52,14 @@ let router:Router = createRouter({
         {
             path: '/proxyServer',
             component: ProxyServer
+        },
+        {
+            path: '/useRequestDemo',
+            component: UseRequestDemo
+        },
+        {
+            path: '/usePaginationDemo',
+            component: UsePaginationDemo
         },
     ]
 })

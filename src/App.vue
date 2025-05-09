@@ -47,6 +47,10 @@ export default {
 
   <router-link to="/optionApiMethodAndVariableDefine">选项式api中属性和方法的定义 | </router-link>
 
+  <router-link to="/useRequestDemo">vue-request(useRequest) | </router-link>
+
+  <router-link to="/usePaginationDemo">vue-request(usePagination) | </router-link>
+
   <div>
     <br>
     <router-view/>
