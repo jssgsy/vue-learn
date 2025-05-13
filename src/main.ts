@@ -10,68 +10,17 @@ import Antd from 'ant-design-vue';
 import 'ant-design-vue/dist/reset.css';
 
 import {createRouter, createWebHistory, type Router} from "vue-router";
-import HelloWorld from "./components/HelloWorld.vue";
-import ModulePathAlias from "./components/ModulePathAlias.vue";
-import ProxyServer from "./components/ProxyServer.vue";
-import OptionApiMethodAndVariableDefine from "./components/OptionApiMethodAndVariableDefine.vue";
-import AntDynamicTable from "./components/antdesignvue/AntDynamicTable.vue";
-import AntStaticTable from "./components/antdesignvue/AntStaticTable.vue";
-import RouterParam from "./components/RouterParam.vue";
-import UseRequestDemo from "./components/vuerequest/UseRequestDemo.vue";
-import UsePaginationDemo from "./components/vuerequest/UsePaginationDemo.vue";
-import AntPagination from "./components/antdesignvue/AntPagination.vue";
-import ParentVue from "./components/propsAndEmits/ParentVue.vue";
+
+// 路由自动注册
+let modules = import.meta.glob('./router/*/*.js', {eager: true});
+let routes = [];
+// 这里之所以可以module.default，是因为路由配置js都是默认导出的数组
+Object.values(modules).forEach(module => {routes.push(...module.default)})
 
 // 创建路由器实例
 let router:Router = createRouter({
     history: createWebHistory(),    // 此配置项也必不可少
-    routes: [   // 在这里配置路由
-        {
-            path: '/about/:id/aa/:name/bb',
-            // path: '/about/:id/aa/:name/bb?q1=:x&q2=:y#:frag',    // 这是错误的
-            component: RouterParam
-        },
-        {
-            path: '/antStaticTable',
-            component: AntStaticTable
-        },
-        {
-            path: '/antDynamicTable',
-            component: AntDynamicTable
-        },
-        {
-            path: '/helloworld',
-            component: HelloWorld
-        },
-        {
-            path: '/modulePathAlias',
-            component: ModulePathAlias
-        },
-        {
-            path: '/optionApiMethodAndVariableDefine',
-            component: OptionApiMethodAndVariableDefine
-        },
-        {
-            path: '/proxyServer',
-            component: ProxyServer
-        },
-        {
-            path: '/useRequestDemo',
-            component: UseRequestDemo
-        },
-        {
-            path: '/usePaginationDemo',
-            component: UsePaginationDemo
-        },
-        {
-            path: '/antPagination',
-            component: AntPagination
-        },
-        {
-            path: '/propsAndEmits',
-            component: ParentVue
-        },
-    ]
+    routes: routes
 })
 let app = createApp(App);
 // 需在mount方法前
