@@ -12,7 +12,7 @@ import 'ant-design-vue/dist/reset.css';
 import {createRouter, createWebHistory, type Router} from "vue-router";
 
 // 路由自动注册
-let modules = import.meta.glob('./router/*/*.js', {eager: true});
+let modules = import.meta.glob('./router/**/*.js', {eager: true});
 let routes = [];
 // 这里之所以可以module.default，是因为路由配置js都是默认导出的数组
 Object.values(modules).forEach(module => {routes.push(...module.default)})
