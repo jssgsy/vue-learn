@@ -20,6 +20,7 @@ import RouterParam from "./components/RouterParam.vue";
 import UseRequestDemo from "./components/vuerequest/UseRequestDemo.vue";
 import UsePaginationDemo from "./components/vuerequest/UsePaginationDemo.vue";
 import AntPagination from "./components/antdesignvue/AntPagination.vue";
+import ParentVue from "./components/propsAndEmits/ParentVue.vue";
 
 // 创建路由器实例
 let router:Router = createRouter({
@@ -65,6 +66,10 @@ let router:Router = createRouter({
         {
             path: '/antPagination',
             component: AntPagination
+        },
+        {
+            path: '/propsAndEmits',
+            component: ParentVue
         },
     ]
 })

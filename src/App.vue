@@ -8,6 +8,8 @@ import ModulePathAlias from "@/components/ModulePathAlias.vue";
 import VueRequestLearn from "@/components/ProxyServer.vue";
 import OptionApiMethodAndVariableDefine from "@/components/OptionApiMethodAndVariableDefine.vue";
 import AntDynamicTable from "@/components/antdesignvue/AntDynamicTable.vue";
+import ParentVue from "@/components/propsAndEmits/ParentVue.vue";
+
 // 2. 选项式api要手动导出
 export default {
   name: 'App',  // 组件的名字
@@ -19,7 +21,8 @@ export default {
     ModulePathAlias,
     VueRequestLearn,
     OptionApiMethodAndVariableDefine,
-    AntDynamicTable
+    AntDynamicTable,
+    ParentVue,
   }
 }
 // 从上述1，2，3看，选项式api相较于组合式api在代码上确实更加麻烦些
@@ -50,6 +53,8 @@ export default {
   <router-link to="/useRequestDemo">vue-request(useRequest) | </router-link>
 
   <router-link to="/usePaginationDemo">vue-request(usePagination) | </router-link>
+
+  <router-link to="/propsAndEmits">props和emits | </router-link>
 
   <div>
     <br>
