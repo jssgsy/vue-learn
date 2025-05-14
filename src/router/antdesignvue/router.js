@@ -14,7 +14,11 @@ export default [
     {
         path: '/antPagination',
         // 动态导入，减少初始加载时间
-        component: import('@/components/antdesignvue/AntPagination.vue')
-
+        component: () => import('@/components/antdesignvue/AntPagination.vue')
     },
+    {
+        path: '/antAutoComplete',
+        // 动态导入，减少初始加载时间
+        component: () => import('@/components/antdesignvue/AntAutoComplete.vue')
+    }
 ]
