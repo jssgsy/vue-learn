@@ -5,27 +5,13 @@ import axios from "axios";
 
 export default defineComponent({
   name: "UsePaginationDemo",
-  data() {
-    return {
-      data: null,
-      loading: null,
-      error: null,
-      params: null,
-      current: null,
-      pageSize: null,
-      totalPage: null,
-      total: null,
-    }
-  },
-  methods: {
-    queryData() {
+  setup() {
+    function queryData() {
       return axios.get("http://localhost:5173/api/itai/test/page");
     }
-  },
-  mounted() {
     // loading, data, error, params也适用于useRequest，或者说usePagination是从useRequest继承来的
     // current, pageSize, totalPage, total等是usePagination独有的
-    const {loading, data, error, params, current, pageSize, totalPage, total} = usePagination(this.queryData, {
+    const {loading, data, error, params, current, pageSize, totalPage, total} = usePagination(queryData, {
       defaultParams: [
         { // 分页接口至少都需要两个参数，默认分别为1、10
           page: 2,  // 1.2处： 因为1.1处指定为page
@@ -38,14 +24,7 @@ export default defineComponent({
         totalPageKey: 'data.pages'  // 表示接口响应中表示总页数的字段(响应均被封装在data中)，要用引号括起来
       }
     });
-    this.loading = loading;
-    this.data = data;
-    this.error = error;
-    this.params = params;
-    this.current = current;
-    this.pageSize = pageSize;
-    this.totalPage = totalPage;
-    this.total = total
+    return {loading, data, error, params, current, pageSize, totalPage, total};
   }
 })
 </script>

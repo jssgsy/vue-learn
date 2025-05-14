@@ -5,34 +5,24 @@ import {useRequest} from "vue-request";
 
 export default defineComponent({
   name: "UseRequestDemo",
-  data() {
-    return {
-      data: null,
-      loading: null,
-      error: null,
-      params: null,
-    }
-  },
-  methods: {
-    queryData(p1, p2) {
+  // useRequest是采用的组合式api，如果项目使用选项式api则需放在这里setup方法中
+  setup() {
+    function queryData(p1, p2) {
       return axios.get("http://localhost:5173/api/itai/test/page");
     }
-  },
-  mounted() {
     // 接口的所有响应(包含响应头)统一封装在这里的data中；
-      // 响应体数据被封装在data.data中;
-      // 响应体数据被封装在data.headers中;
+    // 响应体数据被封装在data.data中;
+    // 响应体数据被封装在data.headers中;
     // 重点：data只有在请求实际完成后才会有值，因此访问时要注意是否有值，如可借助可选链语法
     // params：是Service(这里的this.queryData)的入参而不是底层axios的入参
-    const {loading, data, error, params} = useRequest(this.queryData, {
+    const {loading, data, error, params} = useRequest(queryData, {
       defaultParams: [
         {p1: 'zs', p2: 19}
       ]
     });
-    this.loading = loading;
-    this.data = data;
-    this.error = error;
-    this.params = params;
+    return {
+      loading, data, error, params
+    }
   }
 })
 </script>
