@@ -20,5 +20,10 @@ export default [
         path: '/antAutoComplete',
         // 动态导入，减少初始加载时间
         component: () => import('@/components/antdesignvue/AntAutoComplete.vue')
+    },
+    {
+        path: '/antIcon',
+        // 动态导入，减少初始加载时间
+        component: () => import('@/components/antdesignvue/AntIcon.vue')
     }
 ]
