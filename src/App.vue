@@ -39,6 +39,8 @@ export default {
 
   <router-link to="/antIcon">ant Icon组件 | </router-link>
 
+  <router-link to="/antMenu">ant Menu组件 | </router-link>
+
   <router-link to="/about/100/aa/zhangsan/bb?q1=query1&q2=query2#myfragment">路由参数 | </router-link>
 
   <!--这里的msg是所谓的props-->
