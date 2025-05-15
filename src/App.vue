@@ -9,11 +9,13 @@ import VueRequestLearn from "@/components/ProxyServer.vue";
 import OptionApiMethodAndVariableDefine from "@/components/OptionApiMethodAndVariableDefine.vue";
 import AntDynamicTable from "@/components/antdesignvue/AntDynamicTable.vue";
 import ParentVue from "@/components/propsAndEmits/ParentVue.vue";
+import BreadCrumb from "@/components/antdesignvue/BreadCrumb.vue";
 
 // 2. 选项式api要手动导出
 export default {
   name: 'App',  // 组件的名字
   components: {
+    BreadCrumb,
     // 3. 还要指定包含的子组件
     HelloWorld,
     About,
@@ -42,6 +44,8 @@ export default {
   <router-link to="/antMenu">ant Menu组件 | </router-link>
 
   <router-link to="/antLayout">ant Layout组件 | </router-link>
+
+  <router-link to="/antBreadCrumb">ant breadCrumb组件 | </router-link>
 
   <router-link to="/about/100/aa/zhangsan/bb?q1=query1&q2=query2#myfragment">路由参数 | </router-link>
 

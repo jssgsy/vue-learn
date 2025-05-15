@@ -36,4 +36,9 @@ export default [
         // 动态导入，减少初始加载时间
         component: () => import('@/components/antdesignvue/layout/AntLayout.vue')
     },
+    {
+        path: '/antBreadCrumb',
+        // 动态导入，减少初始加载时间
+        component: () => import('@/components/antdesignvue/BreadCrumb.vue')
+    },
 ]
