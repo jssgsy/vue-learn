@@ -31,4 +31,9 @@ export default [
         // 动态导入，减少初始加载时间
         component: () => import('@/components/antdesignvue/AntMenu.vue')
     },
+    {
+        path: '/antLayout',
+        // 动态导入，减少初始加载时间
+        component: () => import('@/components/antdesignvue/layout/AntLayout.vue')
+    },
 ]
