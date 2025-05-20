@@ -19,14 +19,14 @@ export default [
     },
     {
         path: '/optionApiMethodAndVariableDefine',
-        component: import('@/components/OptionApiMethodAndVariableDefine.vue')
+        component: () => import('@/components/OptionApiMethodAndVariableDefine.vue')
     },
     {
         path: '/proxyServer',
-        component: import('@/components/ProxyServer.vue')
+        component: () => import('@/components/ProxyServer.vue')
     },
     {
         path: '/propsAndEmits',
-        component: import('@/components/propsAndEmits/ParentVue.vue')
+        component: () => import('@/components/propsAndEmits/ParentVue.vue')
     },
 ]
