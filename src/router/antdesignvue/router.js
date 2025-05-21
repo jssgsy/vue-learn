@@ -41,4 +41,9 @@ export default [
         // 动态导入，减少初始加载时间
         component: () => import('@/components/antdesignvue/BreadCrumb.vue')
     },
+    {
+        path: '/antTabs',
+        // 动态导入，减少初始加载时间
+        component: () => import('@/components/antdesignvue/AntTabs.vue')
+    },
 ]
