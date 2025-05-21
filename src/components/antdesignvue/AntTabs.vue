@@ -1,9 +1,37 @@
 <script setup>
 import {ref} from "vue";
 import {UpCircleOutlined} from "@ant-design/icons-vue";
-// 注，这里是字符串
+
+// 注，这里是字符串，因为key要求是字符串类型
 let activeKey = ref('2');
 
+// 别忘了定义key是字符串类型
+let tabPaneArr = ref([
+  {key: '1', tab: 'tab1', content: '标签1'},
+  {key: '2', tab: 'tab2', content: '标签2'},
+  {key: '3', tab: 'tab3', content: '标签3'},
+]);
+
+function onEdit(targetKey, action) {
+  console.log('event: ', targetKey, ' targetKey:', targetKey);
+  if (action === 'add') {
+    addTab()
+  } else {
+    removeTab(targetKey);
+  }
+}
+
+function addTab() {
+  let lastEle = tabPaneArr.value[tabPaneArr.value.length - 1];
+  let toAdd = {key: lastEle.key + 1, tab: lastEle.tab + "_n", content: lastEle.content + "_add"};
+  tabPaneArr.value.push(toAdd);
+  activeKey.value = toAdd.key;
+}
+
+function removeTab(targetKey) {
+  // 这里必须使用.value
+  tabPaneArr.value = tabPaneArr.value.filter(item => item.key !== targetKey);
+}
 </script>
 
 <template>
@@ -36,8 +64,16 @@ let activeKey = ref('2');
       标签10
     </a-tab-pane>
   </a-tabs>
+  <br>
+
+  <!--动态tab：实现新增与删除tab-->
+  <a-tabs v-model:activeKey="activeKey" type="editable-card" @edit="onEdit">
+    <a-tab-pane v-for="item in tabPaneArr" :key="item.key" :tab="item.tab" >{{ item.tab }}</a-tab-pane>
+  </a-tabs>
+
 </template>
 
 <style scoped>
 
 </style>
+
