@@ -71,6 +71,8 @@ export default {
 
   <router-link to="/propsAndEmits">props和emits | </router-link>
 
+  <router-link to="/namedRouterView">命名router-view | </router-link>
+
   <div>
     <br>
     <router-view/>

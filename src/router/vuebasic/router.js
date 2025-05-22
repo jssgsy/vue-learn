@@ -29,4 +29,31 @@ export default [
         path: '/propsAndEmits',
         component: () => import('@/components/propsAndEmits/ParentVue.vue')
     },
+    {
+        path: '/namedRouterView',
+        // 命名视图必须使用复数形式的components，而不是单数形式的component
+        component: () => import("@/components/namedRouterView/NamedRouterView.vue"),
+        children: [
+            {
+                path: 'x',
+                // 命名视图必须使用复数形式的components，而不是单数形式的component
+                components: {
+                    default: () => import("@/components/namedRouterView/Y.vue"),
+                    x: () => import("@/components/namedRouterView/X.vue"),
+                    // 不想渲染时直接省略即可，不要赋值null，null会被认为是非法组件名
+                    // y: null,
+
+                }
+            },
+            {
+                path: 'y',
+                // 命名视图必须使用复数形式的components，而不是单数形式的component
+                components: {
+                    default: () => import("@/components/namedRouterView/X.vue"),
+                    y: () => import("@/components/namedRouterView/Y.vue")
+                }
+            },
+        ]
+    },
+
 ]
