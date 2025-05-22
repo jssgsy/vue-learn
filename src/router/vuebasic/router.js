@@ -31,7 +31,7 @@ export default [
     },
     {
         path: '/namedRouterView',
-        // 命名视图必须使用复数形式的components，而不是单数形式的component
+        // 父组件别忘了配置component，否则父组件没法渲染
         component: () => import("@/components/namedRouterView/NamedRouterView.vue"),
         children: [
             {
