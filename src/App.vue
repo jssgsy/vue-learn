@@ -1,82 +1,87 @@
 <!--1. 选项式api要去掉setup属性-->
-<script lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import About from "./components/RouterParam.vue";
-import AntDesignVueLearn from "./components/antdesignvue/AntStaticTable.vue";
-// 路径别名
-import ModulePathAlias from "@/components/ModulePathAlias.vue";
-import VueRequestLearn from "@/components/ProxyServer.vue";
-import OptionApiMethodAndVariableDefine from "@/components/OptionApiMethodAndVariableDefine.vue";
-import AntDynamicTable from "@/components/antdesignvue/AntDynamicTable.vue";
-import ParentVue from "@/components/propsAndEmits/ParentVue.vue";
-import BreadCrumb from "@/components/antdesignvue/BreadCrumb.vue";
+<script setup>
+import {useRouter} from "vue-router";
+const router = useRouter();
+const headerStyle = {
+  textAlign: 'center',
+  color: '#fff',
+  height: 64,
+  paddingInline: 50,
+  lineHeight: '64px',
+  backgroundColor: '#7dbcea',
+};
+const contentStyle = {
+  textAlign: 'center',
+  minHeight: 120,
+  lineHeight: '120px',
+  color: '#fff',
+  backgroundColor: '#108ee9',
+};
+const siderStyle = {
+  textAlign: 'center',
+  lineHeight: '120px',
+  color: '#fff',
+  backgroundColor: '#3ba0e9',
+};
+const footerStyle = {
+  textAlign: 'center',
+  color: '#fff',
+  backgroundColor: '#7dbcea',
+};
 
-// 2. 选项式api要手动导出
-export default {
-  name: 'App',  // 组件的名字
-  components: {
-    BreadCrumb,
-    // 3. 还要指定包含的子组件
-    HelloWorld,
-    About,
-    AntDesignVueLearn,
-    ModulePathAlias,
-    VueRequestLearn,
-    OptionApiMethodAndVariableDefine,
-    AntDynamicTable,
-    ParentVue,
-  }
+const menuItems = [
+      {key: 'vue', title: '悬浮vue', label: 'vue', children: [
+          {key: 'vue路由参数', title: '路由参数', label: '路由参数', path: '/about/100/aa/zhangsan/bb?q1=query1&q2=query2#myfragment'},
+          {key: 'vue模块路径', title: '模块路径', label: '模块路径', path: '/ModulePathAlias'},
+          {key: 'vue代理服务器', title: '代理服务器', label: '代理服务器', path: '/proxyServer'},
+          {key: 'vue选项式api中属性和方法的定义', title: '选项式api中属性和方法的定义', label: '选项式api中属性和方法的定义', path: '/optionApiMethodAndVariableDefine'},
+          {key: 'vueprops和emits', title: 'props和emits', label: 'props和emits', path: '/propsAndEmits'},
+          {key: 'vue命名router-view', title: '命名router-view', label: '命名router-view', path: '/namedRouterView'},
+        ]},
+      {key: 'k3', title: '悬浮ant-design-vue', label: 'ant-design-vue', children: [
+          {key: '动态数据源表格', label: '动态数据源表格', title: '动态数据源表格', path: '/antDynamicTable'},
+          {key: '静态数据源表格', label: '静态数据源表格', title: '静态数据源表格', path: '/antStaticTable'},
+          {key: '分页器', label: '分页器', title: '分页器', path: '/antPagination'},
+          {key: 'AutoComplete组件', label: 'AutoComplete组件', title: 'AutoComplete组件', path: '/antAutoComplete'},
+          {key: 'Icon组件', label: 'Icon组件', title: 'Icon组件', path: '/antIcon'},
+          {key: 'Menu组件', label: 'Menu组件', title: 'Menu组件', path: '/antMenu'},
+          {key: 'Layout组件', label: 'Layout组件', title: 'Layout组件', path: '/antLayout'},
+          {key: 'breadCrumb组件', label: 'breadCrumb组件', title: 'breadCrumb组件', path: '/antBreadCrumb'},
+          {key: 'Tabs组件', label: 'Tabs组件', title: 'Tabs组件', path: '/antTabs'},
+        ]
+      },
+      {key: 'vue-request', title: '悬浮vue-request', label: 'vue-request', children: [
+          {key: 'vue-request-useRequest', title: 'useRequest', label: 'useRequest', path: '/useRequestDemo'},
+          {key: 'vue-request-usePagination', title: 'usePagination', label: 'usePagination', path: '/usePaginationDemo'},
+        ]},
+      {key: 'vite', title: '悬浮vite', label: 'vite', children: [
+          {key: 'vite环境变量', title: '环境变量', label: '环境变量', path: '/viteEnv'},
+        ]},
+    ];
+function clickMenu ({item}) {
+  router.push(item.path)
 }
-// 从上述1，2，3看，选项式api相较于组合式api在代码上确实更加麻烦些
 </script>
 
 <template>
-  <router-link to="/antDynamicTable">ant动态数据源表格 | </router-link>
 
-  <router-link to="/antStaticTable">ant静态数据源表格 |</router-link>
-
-  <router-link to="/antPagination">ant分页器 |</router-link>
-
-  <router-link to="/antAutoComplete">ant AutoComplete组件 | </router-link>
-
-  <router-link to="/antIcon">ant Icon组件 | </router-link>
-
-  <router-link to="/antMenu">ant Menu组件 | </router-link>
-
-  <router-link to="/antLayout">ant Layout组件 | </router-link>
-
-  <router-link to="/antBreadCrumb">ant breadCrumb组件 | </router-link>
-
-  <router-link to="/antTabs">ant Tabs组件 | </router-link>
-
-  <router-link to="/viteEnv">vite环境变量 | </router-link>
-
-  <router-link to="/about/100/aa/zhangsan/bb?q1=query1&q2=query2#myfragment">路由参数 | </router-link>
+  <a-layout>
+    <a-layout-header :style="headerStyle">撑大layout布局，默认是根据页面宽度来的，还可以使用和style进行设置。这是头部区域.这是头部区域.这是头部区域.这是头部区域.这是头部区域.这是头部区域.这是头部区域.这是头部区域.</a-layout-header>
+    <a-layout>
+      <a-layout-sider :style="siderStyle">
+        <a-menu :items="menuItems" mode="inline" @click="clickMenu"/>
+      </a-layout-sider>
+      <a-layout-content >
+        <router-view/>
+      </a-layout-content>
+    </a-layout>
+  </a-layout>
 
   <!--这里的msg是所谓的props-->
-  <router-link to="/helloWorld">
+  <!--<router-link to="/helloWorld">
     hello-world |
-  </router-link>
+  </router-link>-->
   <!--<HelloWorld msg="Hello World!"/>-->
-
-  <router-link to="/ModulePathAlias">模块路径 | </router-link>
-
-  <router-link to="/proxyServer">代理服务器 | </router-link>
-
-  <router-link to="/optionApiMethodAndVariableDefine">选项式api中属性和方法的定义 | </router-link>
-
-  <router-link to="/useRequestDemo">vue-request(useRequest) | </router-link>
-
-  <router-link to="/usePaginationDemo">vue-request(usePagination) | </router-link>
-
-  <router-link to="/propsAndEmits">props和emits | </router-link>
-
-  <router-link to="/namedRouterView">命名router-view | </router-link>
-
-  <div>
-    <br>
-    <router-view/>
-  </div>
 </template>
 
 <style scoped>
