@@ -1,6 +1,6 @@
 <script>
 import {defineComponent} from 'vue'
-import ChildVue from "@/components/propsAndEmits/ChildVue.vue";
+import ChildVue from "@/components/vue/propsAndEmits/ChildVue.vue";
 
 export default defineComponent({
   name: "ParentVue",

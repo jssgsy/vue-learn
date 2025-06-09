@@ -1,5 +1,5 @@
-import RouterParam from "@/components/RouterParam.vue";
-import HelloWorld from "@/components/HelloWorld.vue";
+import RouterParam from "@/components/vue/RouterParam.vue";
+import HelloWorld from "@/components/vue/HelloWorld.vue";
 
 // 统一为export default []方式
 export default [

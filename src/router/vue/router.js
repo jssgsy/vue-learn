@@ -1,5 +1,5 @@
-import RouterParam from "@/components/RouterParam.vue";
-import HelloWorld from "@/components/HelloWorld.vue";
+import RouterParam from "@/components/vue/RouterParam.vue";
+import HelloWorld from "@/components/vue/HelloWorld.vue";
 
 // 统一为export default []方式
 export default [
@@ -15,31 +15,31 @@ export default [
     {
         path: '/modulePathAlias',
         // 动态导入，减少初始加载时间
-        component: () => import('@/components/ModulePathAlias.vue')
+        component: () => import('@/components/vue/ModulePathAlias.vue')
     },
     {
         path: '/optionApiMethodAndVariableDefine',
-        component: () => import('@/components/OptionApiMethodAndVariableDefine.vue')
+        component: () => import('@/components/vue/OptionApiMethodAndVariableDefine.vue')
     },
     {
         path: '/proxyServer',
-        component: () => import('@/components/ProxyServer.vue')
+        component: () => import('@/components/vue/ProxyServer.vue')
     },
     {
         path: '/propsAndEmits',
-        component: () => import('@/components/propsAndEmits/ParentVue.vue')
+        component: () => import('@/components/vue/propsAndEmits/ParentVue.vue')
     },
     {
         path: '/namedRouterView',
         // 父组件别忘了配置component，否则父组件没法渲染
-        component: () => import("@/components/namedRouterView/NamedRouterView.vue"),
+        component: () => import("@/components/vue/namedRouterView/NamedRouterView.vue"),
         children: [
             {
                 path: 'x',
                 // 命名视图必须使用复数形式的components，而不是单数形式的component
                 components: {
-                    default: () => import("@/components/namedRouterView/Y.vue"),
-                    x: () => import("@/components/namedRouterView/X.vue"),
+                    default: () => import("@/components/vue/namedRouterView/Y.vue"),
+                    x: () => import("@/components/vue/namedRouterView/X.vue"),
                     // 不想渲染时直接省略即可，不要赋值null，null会被认为是非法组件名
                     // y: null,
 
@@ -49,8 +49,8 @@ export default [
                 path: 'y',
                 // 命名视图必须使用复数形式的components，而不是单数形式的component
                 components: {
-                    default: () => import("@/components/namedRouterView/X.vue"),
-                    y: () => import("@/components/namedRouterView/Y.vue")
+                    default: () => import("@/components/vue/namedRouterView/X.vue"),
+                    y: () => import("@/components/vue/namedRouterView/Y.vue")
                 }
             },
         ]
