@@ -36,6 +36,7 @@ const menuItems = [
           {key: 'vue代理服务器', title: '代理服务器', label: '代理服务器', path: '/proxyServer'},
           {key: 'vue选项式api中属性和方法的定义', title: '选项式api中属性和方法的定义', label: '选项式api中属性和方法的定义', path: '/optionApiMethodAndVariableDefine'},
           {key: 'vueprops和emits', title: 'props和emits', label: 'props和emits', path: '/propsAndEmits'},
+          {key: 'vueProvide和Inject', title: 'Provide和Inject', label: 'Provide和Inject', path: '/provideAndInject'},
           {key: 'vue命名router-view', title: '命名router-view', label: '命名router-view', path: '/namedRouterView'},
         ]},
       {key: 'k3', title: '悬浮ant-design-vue', label: 'ant-design-vue', children: [

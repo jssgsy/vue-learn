@@ -30,6 +30,18 @@ export default [
         component: () => import('@/components/vue/propsAndEmits/ParentVue.vue')
     },
     {
+        path: '/provideAndInject',
+        component: () => import('@/components/vue/provideAndInject/ParentA.vue'),
+        children: [{
+            path: 'childA_1',
+            component: () => import('@/components/vue/provideAndInject/ChildA_1.vue'),
+            children: [{
+                path: 'childA_1_1',
+                component: () => import('@/components/vue/provideAndInject/ChildA_1_1.vue'),
+            }]
+        }]
+    },
+    {
         path: '/namedRouterView',
         // 父组件别忘了配置component，否则父组件没法渲染
         component: () => import("@/components/vue/namedRouterView/NamedRouterView.vue"),
