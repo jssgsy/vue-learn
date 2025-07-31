@@ -67,5 +67,9 @@ export default [
             },
         ]
     },
+    {
+        path: '/render',
+        component: () => import('@/components/vue/render/Render.vue')
+    },
 
 ]
