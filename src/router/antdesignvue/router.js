@@ -61,4 +61,9 @@ export default [
         // 动态导入，减少初始加载时间
         component: () => import('@/components/antdesignvue/feedback/AntPopConfirm.vue')
     },
+    {
+        path: '/antButton',
+        // 动态导入，减少初始加载时间
+        component: () => import('@/components/antdesignvue/AntButton.vue')
+    },
 ]
