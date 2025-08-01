@@ -50,6 +50,7 @@ const menuItems = [
           {key: 'Layout组件', label: 'Layout组件', title: 'Layout组件', path: '/antLayout'},
           {key: 'breadCrumb组件', label: 'breadCrumb组件', title: 'breadCrumb组件', path: '/antBreadCrumb'},
           {key: 'Tabs组件', label: 'Tabs组件', title: 'Tabs组件', path: '/antTabs'},
+          {key: 'Form组件', label: 'form组件', title: 'Form组合Title', path: '/antForm'},
         ]
       },
       {key: 'vue-request', title: '悬浮vue-request', label: 'vue-request', children: [

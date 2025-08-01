@@ -46,4 +46,9 @@ export default [
         // 动态导入，减少初始加载时间
         component: () => import('@/components/antdesignvue/AntTabs.vue')
     },
+    {
+        path: '/antForm',
+        // 动态导入，减少初始加载时间
+        component: () => import('@/components/antdesignvue/AntForm.vue')
+    },
 ]
