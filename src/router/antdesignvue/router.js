@@ -71,4 +71,9 @@ export default [
         // 动态导入，减少初始加载时间
         component: () => import('@/components/antdesignvue/AntDescriptions.vue')
     },
+    {
+        path: '/antBasicCrud',
+        // 动态导入，减少初始加载时间
+        component: () => import('@/components/antdesignvue/practice/AntBasicCrud.vue')
+    },
 ]
