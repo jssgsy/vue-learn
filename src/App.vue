@@ -54,6 +54,7 @@ const menuItems = [
           {key: 'Modal组件', label: 'Modal组件', title: 'Modal组合Title', path: '/antModal'},
           {key: 'PopConfirm组件', label: 'PopConfirm组件', title: 'PopConfirm组合Title', path: '/antPopConfirm'},
           {key: 'Button组件', label: 'Button组件', title: 'Button组件Title', path: '/antButton'},
+          {key: 'Descriptions组件', label: 'Descriptions组件', title: 'Descriptions组件Title', path: '/antDescriptions'},
         ]
       },
       {key: 'vue-request', title: '悬浮vue-request', label: 'vue-request', children: [
