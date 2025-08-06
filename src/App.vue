@@ -57,6 +57,7 @@ const menuItems = [
           {key: 'Button组件', label: 'Button组件', title: 'Button组件Title', path: '/antButton'},
           {key: 'Descriptions组件', label: 'Descriptions组件', title: 'Descriptions组件Title', path: '/antDescriptions'},
           {key: '简单的Crud', label: '简单的Crud', title: '简单的Crud', path: '/antBasicCrud'},
+          {key: 'antWrapModal', label: 'antWrapModal', title: '简antWrapModal单的Crud', path: '/antWrapModal'},
         ]
       },
       {key: 'vue-request', title: '悬浮vue-request', label: 'vue-request', children: [
