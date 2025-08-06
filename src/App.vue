@@ -31,6 +31,7 @@ const footerStyle = {
 
 const menuItems = [
       {key: 'vue', title: '悬浮vue', label: 'vue', children: [
+          {key: 'vue选项式、组合式api', title: '选项式、组合式api', label: '选项式、组合式api', path: '/optionAndCompositionApi'},
           {key: 'vue路由参数', title: '路由参数', label: '路由参数', path: '/about/100/aa/zhangsan/bb?q1=query1&q2=query2#myfragment'},
           {key: 'vue模块路径', title: '模块路径', label: '模块路径', path: '/ModulePathAlias'},
           {key: 'vue代理服务器', title: '代理服务器', label: '代理服务器', path: '/proxyServer'},

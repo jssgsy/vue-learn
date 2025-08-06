@@ -4,6 +4,10 @@ import HelloWorld from "@/components/vue/HelloWorld.vue";
 // 统一为export default []方式
 export default [
     {
+        path: '/optionAndCompositionApi',
+        component: () => import('@/components/vue/optionAndCompositionApi/OptionAndCompositionApi.vue')
+    },
+    {
         path: '/about/:id/aa/:name/bb',
         // path: '/about/:id/aa/:name/bb?q1=:x&q2=:y#:frag',    // 这是错误的
         component: RouterParam
