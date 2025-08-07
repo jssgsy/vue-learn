@@ -75,5 +75,9 @@ export default [
         path: '/render',
         component: () => import('@/components/vue/render/Render.vue')
     },
+    {
+        path: '/exposeParent',
+        component: () => import('@/components/vue/defineExpose/ExposeParent.vue')
+    },
 
 ]

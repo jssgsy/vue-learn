@@ -40,6 +40,7 @@ const menuItems = [
           {key: 'vueProvide和Inject', title: 'Provide和Inject', label: 'Provide和Inject', path: '/provideAndInject'},
           {key: 'vue命名router-view', title: '命名router-view', label: '命名router-view', path: '/namedRouterView'},
           {key: 'vue渲染函数', title: '渲染函数', label: '渲染函数', path: '/render'},
+          {key: 'vue defineExpose', title: 'defineExpose', label: 'defineExpose', path: '/exposeParent'},
         ]},
       {key: 'k3', title: '悬浮ant-design-vue', label: 'ant-design-vue', children: [
           {key: '动态数据源表格', label: '动态数据源表格', title: '动态数据源表格', path: '/antDynamicTable'},
