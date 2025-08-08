@@ -60,6 +60,7 @@ watch(book, (newVal, oldVal) => {
 }, {deep: true, immediate: true});
 
 // 此时fullName是只读的，因为只有getter
+// 返回的值就是计算属性的名字
 const fullName = computed(() => {
   console.log('计算属性，firstName或lastName发生了变动')
   return firstName.value + ' ' + lastName.value
