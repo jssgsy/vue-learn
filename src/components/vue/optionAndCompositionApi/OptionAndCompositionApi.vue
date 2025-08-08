@@ -22,6 +22,7 @@ function handleChangeTitle(newValue) {
                 @noWhat="() => 'onNoWhat'"
                 @change-title="handleChangeTitle"
     ></option-api>
+    <h3>选项式api end</h3>
   </div>
 
   <br><br>
@@ -34,6 +35,7 @@ function handleChangeTitle(newValue) {
                      @noWhat="() => 'onNoWhat'"
                      @change-title="handleChangeTitle"
     ></composition-api>
+    <h3>组合式api end</h3>
   </div>
 </template>
 
