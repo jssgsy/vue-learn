@@ -8,6 +8,7 @@ export default defineComponent({
   data() {
     return {
       firstName: 'zhang',
+      lastName: 'shan',
       teacher: {
         school: 'my_university',
         level: 'good'
@@ -54,6 +55,29 @@ export default defineComponent({
       immediate: true,
     }
   },
+  computed: {
+    // fullName就是计算属性的名字，可被直接使用
+    // 是一个函数，相当于只定义了getter函数，即fullName只是可读的
+    fullName()  {
+      console.log('计算属性，firstName或lastName发生了变动')
+      return this.firstName + this.lastName
+    },
+    // 细化，此时fullName2是可读可写的
+    fullName2: {
+      // 访问fullName时被调用
+      get() {
+        console.log('计算属性getter，firstName或lastName发生了变动')
+        return this.firstName + this.lastName
+      },
+      // 修改fullName时被调用
+      set(newValue) {
+        console.log('计算属性setter，firstName或lastName发生了变动')
+        const names = newValue.split(' ')
+        this.firstName = names[0] || ''
+        this.lastName = names[1] || ''
+      }
+    }
+  },
   mounted() {
     console.log('选项式api访问props，', this.$props);
 
@@ -83,6 +107,13 @@ export default defineComponent({
     <p><button @click="this.teacher.level+='-new'" >改变成员变量teacher.level(不会触发)</button></p>
     <p><button @click="this.hobbies.push('another')" >改变数组hobbies</button></p>
     <p><button @click="this.book.price+=1" >改变对象book</button></p>
+  </div>
+  <br>
+  <div style="background-color: green">
+    <h3>测试computed</h3>
+    计算属性fullName：{{this.fullName}}---fullName2：{{this.fullName2}}
+    <p><button @click="this.firstName+='-new'" >改变firstName</button></p>
+    <p><button @click="this.fullName2+=' new'" >改变fullName2</button></p>
   </div>
 </template>
 

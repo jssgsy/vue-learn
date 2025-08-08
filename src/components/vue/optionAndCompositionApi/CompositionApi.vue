@@ -1,10 +1,10 @@
 <script setup>
 
 // 用返回值来接收
-import {reactive, ref, useAttrs, watch} from "vue";
+import {computed, reactive, ref, useAttrs, watch} from "vue";
 
 let firstName = ref('zhang');
-
+let lastName = ref('shan');
 let teacher = reactive({
   school: 'my_university',
   level: 'good'
@@ -59,7 +59,25 @@ watch(book, (newVal, oldVal) => {
   console.log('深度监听对象book，newVal: ', newVal, ' oldVal: ', oldVal);
 }, {deep: true, immediate: true});
 
+// 此时fullName是只读的，因为只有getter
+const fullName = computed(() => {
+  console.log('计算属性，firstName或lastName发生了变动')
+  return firstName.value + ' ' + lastName.value
+})
 
+// 可读可写
+const fullName2 = computed({
+  get() {
+    console.log('计算属性getter，firstName或lastName发生了变动');
+    return firstName.value + lastName.value;
+  },
+  set(newValue) {
+    console.log('计算属性setter，firstName或lastName发生了变动');
+    const [first, last] = newValue.split(' ');
+    firstName.value = first;
+    lastName.value = last || '';
+  }
+})
 </script>
 
 <template>
@@ -83,6 +101,13 @@ watch(book, (newVal, oldVal) => {
     <p><button @click="teacher.level+='-new'" >改变成员变量teacher.level(不会触发)</button></p>
     <p><button @click="hobbies.push('another')" >改变数组hobbies</button></p>
     <p><button @click="book.price+=1" >改变对象book</button></p>
+  </div>
+  <br>
+  <div style="background-color: green">
+    <h3>测试computed</h3>
+    计算属性fullName：{{fullName}}---fullName2：{{fullName2}}
+    <p><button @click="firstName+='-new'" >改变firstName</button></p>
+    <p><button @click="fullName2+=' new'" >改变fullName2</button></p>
   </div>
 </template>
 
