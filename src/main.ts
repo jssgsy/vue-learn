@@ -13,6 +13,9 @@ import 'ant-design-vue/dist/reset.css';
 
 import {createRouter, createWebHistory, type Router} from "vue-router";
 
+import {createPinia} from "pinia";
+let pinia = createPinia();
+
 // 路由自动注册
 let modules = import.meta.glob('./router/**/*.js', {eager: true});
 let routes = [];
@@ -34,4 +37,7 @@ app.use(Antd)
 // for (const [key, component] of Object.entries(icons)) {
 //     app.component(key, component);
 // }
+
+// 加载pinia
+app.use(pinia)
 app.mount('#app')

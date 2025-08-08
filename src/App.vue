@@ -42,6 +42,9 @@ const menuItems = [
           {key: 'vue渲染函数', title: '渲染函数', label: '渲染函数', path: '/render'},
           {key: 'vue defineExpose', title: 'defineExpose', label: 'defineExpose', path: '/exposeParent'},
         ]},
+      {key: 'pinia', title: '悬浮pinia', label: 'pinia', children: [
+        {key: 'pinia基础', title: 'pinia基础', label: 'pinia基础', path: '/usePinia'},
+      ]},
       {key: 'k3', title: '悬浮ant-design-vue', label: 'ant-design-vue', children: [
           {key: '动态数据源表格', label: '动态数据源表格', title: '动态数据源表格', path: '/antDynamicTable'},
           {key: '静态数据源表格', label: '静态数据源表格', title: '静态数据源表格', path: '/antStaticTable'},
